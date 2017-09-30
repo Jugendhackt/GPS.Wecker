@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 
 public class AlarmActivity extends AppCompatActivity {
 
@@ -14,9 +15,19 @@ public class AlarmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
-        MediaPlayer ring= MediaPlayer.create(AlarmActivity.this,R.raw.biebbieb);
+
+        final MediaPlayer ring= MediaPlayer.create(AlarmActivity.this,R.raw.biebbieb);
         ring.setLooping(true);
         ring.start();
+
+        Button stopAlarm = findViewById(R.id.stopAlarm);
+        stopAlarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ring.stop();
+                finish();
+            }
+        });
     }
 
 }
