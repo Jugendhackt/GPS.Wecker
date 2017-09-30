@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Pendler Wecker</string>
     <string name="HelloWorld">Lieber Nutzer,\nkennst du es nicht, wenn du morgens totmüde im Schulbus sitzt und dann einschläfst? Oder dass du dir einen Wecker für die erste Stunde stellst und
-        diese spontan entfällt? Ein Thema, dass wahrscheinlich schon einmal jeden Pendler beschäftigt hat. Dies wollen wir mit unserer App verbesern.</string>
+        diese spontan entfällt? Ein Thema, das wahrscheinlich schon einmal jeden Pendler beschäftigt hat. Dies wollen wir mit unserer App verbesern.</string>
     <string name="WelcomeButton">Weiter</string>
     <string name="title_activity_parameter">Parametereinstellungen</string>
     <string name="button_ausfuehren">Starten</string>
