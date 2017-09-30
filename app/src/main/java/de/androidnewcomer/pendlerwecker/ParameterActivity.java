@@ -14,7 +14,7 @@ public class ParameterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parameter);
-        Button WelcomeButton = findViewById(R.id.button_parameter);
+        final Button WelcomeButton = findViewById(R.id.button_parameter);
         WelcomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +45,8 @@ public class ParameterActivity extends AppCompatActivity {
                     intent.putExtra("lon", lon);
                     intent.putExtra("meter", meter);
                     startService(intent);
+
+                    WelcomeButton.setEnabled(false);
 
                 } catch (NumberFormatException e) {
                     Toast.makeText(getBaseContext(), R.string.Fehlermeldung, Toast.LENGTH_LONG).show();
