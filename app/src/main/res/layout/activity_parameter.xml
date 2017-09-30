@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.androidnewcomer.pendlerwecker.WelcomeActivity">
+    tools:context="de.androidnewcomer.pendlerwecker.WelcomeActivity"
+    android:padding="10dp">
 
 
 
@@ -39,6 +40,7 @@
         android:layout_height="wrap_content"
         android:text="@string/destination"
         android:textSize="20dp"
+        android:paddingTop="40dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         android:layout_below="@+id/textView2"
