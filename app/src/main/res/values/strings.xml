@@ -7,4 +7,10 @@
     <string name="button_ausfuehren">Starten</string>
     <string name="Pmstext1">Wecke mich</string>
     <string name="Pmstext2">Meter vor dem Ziel.</string>
+    <string name="destination">Ziel:</string>
+    <string name="Pmstext4">°</string>
+    <string name="Pmstext5">.</string>
+    <string name="NGrad">N</string>
+    <string name="EGrad">E</string>
+
 </resources>

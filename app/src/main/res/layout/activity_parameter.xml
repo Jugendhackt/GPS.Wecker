@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,20 +18,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <EditText
-
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="-3dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
     <TextView
-        android:textSize ="25dp"
+        android:textSize ="20dp"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,14 +30,200 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:textSize ="25dp"
+        android:textSize ="20dp"
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
         android:text="@string/Pmstext2"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        android:layout_below="@+id/editText7"
+        android:layout_alignLeft="@+id/WelcomeButton"
+        android:layout_alignStart="@+id/WelcomeButton" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/destination"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:layout_alignBottom="@+id/WelcomeButton"
+        android:layout_alignLeft="@+id/WelcomeButton"
+        android:layout_alignStart="@+id/WelcomeButton" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6" />
+
+    <TextView
+        android:textSize ="20dp"
+        android:id="@+id/textView4"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Pmstext4"
+        app:layout_constraintLeft_toRightOf="@+id/editText3"
+        tools:layout_editor_absoluteY="175dp"
+        android:layout_alignTop="@+id/editText3"
+        android:layout_toRightOf="@+id/editText3"
+        android:layout_toEndOf="@+id/editText3" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView4"
+        tools:layout_editor_absoluteY="175dp"
+        android:layout_alignTop="@+id/textView7"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_alignStart="@+id/editText3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Pmstext5"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toRightOf="@+id/editText5"
+        tools:layout_editor_absoluteY="196dp"
+        android:layout_alignBottom="@+id/editText8"
+        android:layout_toRightOf="@+id/editText8"
+        android:layout_toEndOf="@+id/editText8" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView5"
+        tools:layout_editor_absoluteY="175dp"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_toRightOf="@+id/textView5"
+        android:layout_toEndOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText8"
+        android:layout_alignLeft="@+id/WelcomeButton"
+        android:layout_alignStart="@+id/WelcomeButton"
+        android:layout_below="@+id/textView3"
+        android:text="@string/NGrad"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="184dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/WelcomeButton"
+        android:layout_alignStart="@+id/WelcomeButton"
+        android:layout_below="@+id/editText8"
+        android:text="@string/EGrad"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        android:layout_below="@+id/textView3"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4" />
+
+    <TextView
+        android:textSize ="20dp"
+        android:id="@+id/textView9"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Pmstext4"
+        app:layout_constraintLeft_toRightOf="@+id/editText8"
+        tools:layout_editor_absoluteY="228dp"
+        android:layout_below="@+id/editText3"
+        android:layout_toRightOf="@+id/editText3"
+        android:layout_toEndOf="@+id/editText3" />
+
+    <EditText
+        android:id="@+id/editText10"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        android:layout_alignTop="@+id/textView9"
+        android:layout_toRightOf="@+id/textView9"
+        android:layout_toEndOf="@+id/textView9" />
+
+    <EditText
+        android:id="@+id/editText12"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/editText6"
+        android:layout_alignBaseline="@+id/editText10"
+        android:layout_alignBottom="@+id/editText10"
+        android:layout_toRightOf="@+id/textView5"
+        android:layout_toEndOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView11"
+        android:layout_alignStart="@+id/textView11" />
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView5"
+        android:layout_toEndOf="@+id/editText10"
+        android:layout_toRightOf="@+id/editText10"
+        android:ems="10"
+        android:text="@string/Pmstext5"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/button_ausfuehren" />
+
+</RelativeLayout>
