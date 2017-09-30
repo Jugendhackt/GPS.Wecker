@@ -24,4 +24,3 @@ public class ParameterActivity extends AppCompatActivity {
         });
     }
 }
-
