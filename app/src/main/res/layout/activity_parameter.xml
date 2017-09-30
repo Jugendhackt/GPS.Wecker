@@ -217,6 +217,8 @@
         android:id="@+id/button_parameter"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:minHeight="80dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
