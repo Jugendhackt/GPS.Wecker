@@ -39,6 +39,11 @@ public class Geo_Service extends Service {
         //Notification wird erstellt
 
 
+        if(intent.getAction() != null && intent.getAction().equals("stop")){
+
+            stopSelf();
+            return START_NOT_STICKY;
+        }
         final Double positionLatitude = intent.getDoubleExtra("lat", 50);
         final Double positionLongitude = intent.getDoubleExtra("lon", 20);
         final int distance = intent.getIntExtra("meter", 50000);
@@ -71,16 +76,27 @@ public class Geo_Service extends Service {
 
         }
 
+        Intent intent2 = new Intent(this, Geo_Service.class);
+
+        intent2.setAction("stop");
+
+
+
+        PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent2, 0);
+
+
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this, id)
                         //Paramenter werden
                         .setContentTitle("Pendler Wecker")
                         .setSmallIcon(R.mipmap.ic_launcher)
+                        .addAction(R.mipmap.ic_launcher, "Deaktivieren", pendingIntent)
                         .setContentText("Alarm ist aktiviert");
 
 
         //Notification wird angezeigt
         startForeground(100, mBuilder.build());
+
 
 
 
@@ -146,6 +162,8 @@ public class Geo_Service extends Service {
 
         if(permissionCheck == PackageManager.PERMISSION_GRANTED ){
           //  Log.d("Log", "True");
+
+            
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 4000, 0, locationListener);
 
 
