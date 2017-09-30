@@ -13,7 +13,7 @@ import android.widget.Button;
 public class WelcomeActivity extends AppCompatActivity {
 
 
-    final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 10;
+    final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
                         ActivityCompat.requestPermissions(WelcomeActivity.this,
                                 new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+                                MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
 
                         // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
                         // app-defined int constant. The callback method gets the
@@ -67,7 +67,7 @@ public class WelcomeActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
         switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_READ_CONTACTS: {
+            case MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
