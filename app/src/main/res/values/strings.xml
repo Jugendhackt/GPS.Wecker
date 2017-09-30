@@ -10,6 +10,7 @@
     <string name="destination">Ziel:</string>
     <string name="Pmstext4">°</string>
     <string name="Pmstext5">.</string>
+    <string name="WeckerStopp">Wecker stoppen</string>
     <string name="NGrad">N</string>
     <string name="EGrad">E</string>
     <string name="title_activity_alarm">AlarmActivity</string>
