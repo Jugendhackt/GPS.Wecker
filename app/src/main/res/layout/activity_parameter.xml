@@ -46,7 +46,7 @@
         android:layout_alignStart="@+id/WelcomeButton" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/NGrad"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -65,14 +65,14 @@
         android:layout_width="25dp"
         android:layout_height="wrap_content"
         android:text="@string/Pmstext4"
-        app:layout_constraintLeft_toRightOf="@+id/editText3"
+        app:layout_constraintLeft_toRightOf="@+id/NGrad"
         tools:layout_editor_absoluteY="175dp"
-        android:layout_alignTop="@+id/editText3"
-        android:layout_toRightOf="@+id/editText3"
-        android:layout_toEndOf="@+id/editText3" />
+        android:layout_alignTop="@+id/NGrad"
+        android:layout_toRightOf="@+id/NGrad"
+        android:layout_toEndOf="@+id/NGrad" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/EGrad"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -81,8 +81,8 @@
         app:layout_constraintLeft_toRightOf="@+id/textView4"
         tools:layout_editor_absoluteY="175dp"
         android:layout_alignTop="@+id/textView7"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
+        android:layout_alignLeft="@+id/NGrad"
+        android:layout_alignStart="@+id/NGrad" />
 
     <TextView
         android:id="@+id/textView5"
@@ -90,14 +90,14 @@
         android:layout_height="wrap_content"
         android:text="@string/Pmstext5"
         android:textSize="20dp"
-        app:layout_constraintLeft_toRightOf="@+id/editText5"
+        app:layout_constraintLeft_toRightOf="@+id/EGrad"
         tools:layout_editor_absoluteY="196dp"
-        android:layout_alignBottom="@+id/editText8"
-        android:layout_toRightOf="@+id/editText8"
-        android:layout_toEndOf="@+id/editText8" />
+        android:layout_alignBottom="@+id/NMinuten"
+        android:layout_toRightOf="@+id/NMinuten"
+        android:layout_toEndOf="@+id/NMinuten" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/NSekunden"
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -113,7 +113,7 @@
         android:id="@+id/textView6"
         android:layout_width="25dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editText8"
+        android:layout_alignBottom="@+id/NMinuten"
         android:layout_alignLeft="@+id/WelcomeButton"
         android:layout_alignStart="@+id/WelcomeButton"
         android:layout_below="@+id/textView3"
@@ -128,21 +128,21 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/WelcomeButton"
         android:layout_alignStart="@+id/WelcomeButton"
-        android:layout_below="@+id/editText8"
+        android:layout_below="@+id/NMinuten"
         android:text="@string/EGrad"
         android:textSize="30dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/NMinuten"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
         android:textSize="20dp"
         app:layout_constraintLeft_toRightOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/NGrad"
         android:layout_below="@+id/textView3"
         android:layout_toRightOf="@+id/textView4"
         android:layout_toEndOf="@+id/textView4" />
@@ -153,38 +153,38 @@
         android:layout_width="25dp"
         android:layout_height="wrap_content"
         android:text="@string/Pmstext4"
-        app:layout_constraintLeft_toRightOf="@+id/editText8"
+        app:layout_constraintLeft_toRightOf="@+id/NMinuten"
         tools:layout_editor_absoluteY="228dp"
-        android:layout_below="@+id/editText3"
-        android:layout_toRightOf="@+id/editText3"
-        android:layout_toEndOf="@+id/editText3" />
+        android:layout_below="@+id/NGrad"
+        android:layout_toRightOf="@+id/NGrad"
+        android:layout_toEndOf="@+id/NGrad" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/EMinuten"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="20dp"
         app:layout_constraintLeft_toRightOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        app:layout_constraintTop_toBottomOf="@+id/EGrad"
         android:layout_alignTop="@+id/textView9"
         android:layout_toRightOf="@+id/textView9"
         android:layout_toEndOf="@+id/textView9" />
 
     <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/ESekunden"
         android:layout_width="75dp"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/EMinuten"
+        android:layout_alignBottom="@+id/EMinuten"
+        android:layout_toEndOf="@+id/textView5"
+
+        android:layout_toRightOf="@+id/textView5"
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="20dp"
-
-        app:layout_constraintTop_toBottomOf="@+id/editText6"
-        android:layout_alignBaseline="@+id/editText10"
-        android:layout_alignBottom="@+id/editText10"
-        android:layout_toRightOf="@+id/textView5"
-        android:layout_toEndOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/NSekunden" />
 
     <EditText
         android:id="@+id/editText7"
@@ -202,9 +202,10 @@
         android:layout_width="10dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView5"
-        android:layout_toEndOf="@+id/editText10"
-        android:layout_toRightOf="@+id/editText10"
+        android:layout_toEndOf="@+id/EMinuten"
+        android:layout_toRightOf="@+id/EMinuten"
         android:ems="10"
+        android:singleLine="false"
         android:text="@string/Pmstext5"
         android:textSize="20dp" />
 
