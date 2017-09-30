@@ -25,8 +25,16 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginLeft="-3dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/Pmstext1" />
 
 </android.support.constraint.ConstraintLayout>

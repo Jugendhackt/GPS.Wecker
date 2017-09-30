@@ -5,4 +5,5 @@
     <string name="WelcomeButton">Weiter</string>
     <string name="title_activity_parameter">Parametereinstellungen</string>
     <string name="button_ausfuehren">Starten</string>
+    <string name="Pmstext1">Wecke mich</string>
 </resources>
