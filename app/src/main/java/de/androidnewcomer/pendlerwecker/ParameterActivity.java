@@ -20,10 +20,8 @@ public class ParameterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parameter);
-<<<<<<< HEAD
+
         final Button WelcomeButton = findViewById(R.id.button_parameter);
-=======
-        Button WelcomeButton = findViewById(R.id.button_parameter);
 
         Button MapButton = findViewById(R.id.mapButton);
 
@@ -46,7 +44,7 @@ public class ParameterActivity extends AppCompatActivity {
 
             }
         });
->>>>>>> Design
+
         WelcomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
