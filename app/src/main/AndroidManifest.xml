@@ -2,10 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.androidnewcomer.pendlerwecker">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>  
-    <uses-feature android:name="android.hardware.location.gps"/>
+     
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+      
+
+    <uses-feature android:name="android.hardware.location.gps" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service android:name=".Geo_Service" />
+
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +27,11 @@
         </activity>
         <activity
             android:name=".ParameterActivity"
-            android:label="@string/title_activity_parameter"
-            ></activity>
+            android:label="@string/title_activity_parameter" />
+        <activity
+            android:name=".AlarmActivity"
+            android:exported="true"
+            android:label="@string/title_activity_alarm"></activity>
     </application>
 
 </manifest>

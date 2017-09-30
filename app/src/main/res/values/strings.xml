@@ -12,5 +12,5 @@
     <string name="Pmstext5">.</string>
     <string name="NGrad">N</string>
     <string name="EGrad">E</string>
-
+    <string name="title_activity_alarm">AlarmActivity</string>
 </resources>
