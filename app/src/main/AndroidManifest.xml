@@ -38,6 +38,7 @@
             android:name=".AlarmActivity"
             android:exported="true"
             android:label="@string/title_activity_alarm"></activity>
+        <activity android:name=".MapActivity" />
     </application>
 
 </manifest>

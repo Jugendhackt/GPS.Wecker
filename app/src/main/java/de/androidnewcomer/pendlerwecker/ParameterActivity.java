@@ -31,18 +31,8 @@ public class ParameterActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
-
-
-                try {
-                    startActivityForResult(builder.build(ParameterActivity.this), PLACE_PICKER_REQUEST);
-                } catch (GooglePlayServicesRepairableException e) {
-                    e.printStackTrace();
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    e.printStackTrace();
-                }
-
-               // PlacePicker.getPlace();
+                Intent intent=new Intent(getBaseContext(),MapActivity.class);
+                startActivity(intent);
 
 
             }
