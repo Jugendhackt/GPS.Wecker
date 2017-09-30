@@ -5,6 +5,7 @@
     <string name="WelcomeButton">Weiter</string>
     <string name="title_activity_parameter">Parametereinstellungen</string>
     <string name="button_ausfuehren">Starten</string>
+    <string name="button_ausfuehren_disabled">Du kannst nicht starten, während der Service läuft</string>
     <string name="Pmstext1">Wecke mich</string>
     <string name="Pmstext2">vor dem Ziel.</string>
     <string name="destination">Ziel:</string>
@@ -15,6 +16,6 @@
     <string name="EGrad">E</string>
     <string name="Meter">m</string>
     <string name="Dubistda">Du bist bald da!</string>
-    <string name="title_activity_alarm">AlarmActivity</string>
+    <string name="title_activity_alarm">Alarm</string>
     <string name="Fehlermeldung">Bitte gültige Zahlen eingeben</string>
 </resources>

@@ -51,8 +51,11 @@ public class ParameterActivity extends AppCompatActivity {
         WelcomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(Geo_Service.isGeoActive == true){
+                    Toast.makeText(getBaseContext(),R.string.button_ausfuehren_disabled, Toast.LENGTH_LONG).show();
+                }
 
-
+                else {
                 try {
                     EditText NGradedit = findViewById(R.id.NGrad);
                     EditText NMinutenedit = findViewById(R.id.NMinuten);
@@ -79,10 +82,9 @@ public class ParameterActivity extends AppCompatActivity {
                     intent.putExtra("meter", meter);
                     startService(intent);
 
-                    WelcomeButton.setEnabled(false);
 
                 } catch (NumberFormatException e) {
-                    Toast.makeText(getBaseContext(), R.string.Fehlermeldung, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), R.string.Fehlermeldung, Toast.LENGTH_LONG).show();}
                 }
             }
         });
@@ -102,18 +104,9 @@ public class ParameterActivity extends AppCompatActivity {
 
 
 
-    @Override
-    public void onResume(){
-        super.onResume();
 
-        Button Start = findViewById(R.id.button_parameter);
-        if(Geo_Service.isGeoActive == true) {
-            Start.setEnabled(false);
-
-        }
-        else Start.setEnabled(true);
     }
 
 
 
-}
+
