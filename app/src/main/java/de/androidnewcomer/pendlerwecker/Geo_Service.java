@@ -31,11 +31,17 @@ public class Geo_Service extends Service {
 
 
     String id = "my_channel_01";
+    Boolean updatesEnable = true;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         //Notification wird erstellt
+
+
+        final Double positionLatitude = intent.getDoubleExtra("lat", 50);
+        final Double positionLongitude = intent.getDoubleExtra("lon", 20);
+        final int distance = intent.getIntExtra("distance", 50000);
 
 
 
@@ -87,8 +93,39 @@ public class Geo_Service extends Service {
         LocationListener locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
                 // Called when a new location is found by the network location provider.
-                Log.d("location", location.toString());
-                Log.d("location", "DA");
+
+                Double latitude = location.getLatitude();
+                Double longitude = location.getLongitude();
+
+
+                //Log.d("location", String.valueOf("Latitude: " + latitude + "Longitude: " + longitude));
+
+                Location loc1 = new Location("");
+                loc1.setLatitude(latitude);
+                loc1.setLongitude(longitude);
+
+                Location loc2 = new Location("");
+                loc2.setLatitude(positionLatitude);
+                loc2.setLongitude(positionLongitude);
+
+
+
+                float distanceInMeters = loc1.distanceTo(loc2);
+
+                Log.d("Meter: ", String.valueOf(distanceInMeters));
+
+                if(distanceInMeters <= distance && updatesEnable){
+
+
+                    updatesEnable = false;
+                    Intent intent= new Intent(getBaseContext(),AlarmActivity.class);
+                    startActivity(intent);
+
+
+                    stopSelf();
+
+                }
+
             }
 
             public void onStatusChanged(String provider, int status, Bundle extras) {
