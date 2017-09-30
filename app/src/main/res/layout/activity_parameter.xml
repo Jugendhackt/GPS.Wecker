@@ -23,11 +23,13 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:text="@string/Pmstext1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_alignBaseline="@+id/WelcomeButton"
+        android:layout_alignBottom="@+id/WelcomeButton"
+        android:layout_alignLeft="@+id/WelcomeButton"
+        android:layout_alignStart="@+id/WelcomeButton" />
 
     <TextView
         android:textSize ="20dp"
@@ -36,7 +38,7 @@
         android:layout_height="wrap_content"
         android:text="@string/Pmstext2"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editText7"
         android:layout_below="@+id/editText7"
         android:layout_alignLeft="@+id/WelcomeButton"
         android:layout_alignStart="@+id/WelcomeButton" />
@@ -49,7 +51,7 @@
         android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:layout_alignBottom="@+id/WelcomeButton"
+        android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/WelcomeButton"
         android:layout_alignStart="@+id/WelcomeButton" />
 
@@ -187,7 +189,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="20dp"
-        app:layout_constraintLeft_toRightOf="@+id/textView11"
+
         app:layout_constraintTop_toBottomOf="@+id/editText6"
         android:layout_alignBaseline="@+id/editText10"
         android:layout_alignBottom="@+id/editText10"
@@ -201,8 +203,9 @@
         android:ems="10"
         android:inputType="number"
         android:layout_below="@+id/textView"
-        android:layout_alignLeft="@+id/textView11"
-        android:layout_alignStart="@+id/textView11" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"></EditText>
+
 
     <EditText
         android:id="@+id/editText9"

@@ -13,7 +13,7 @@ public class ParameterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parameter);
-        Button WelcomeButton = (Button) findViewById(R.id.Button);
+        Button WelcomeButton = (Button) findViewById(R.id.WelcomeButton);
         WelcomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
