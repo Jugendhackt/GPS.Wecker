@@ -192,6 +192,7 @@
         android:id="@+id/Meter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="10000"
         android:ems="10"
         android:inputType="number"
         android:layout_below="@+id/textView"
@@ -199,17 +200,18 @@
         android:layout_alignParentStart="true"></EditText>
 
 
-    <EditText
+    <TextView
         android:id="@+id/editText9"
         android:layout_width="10dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView5"
-        android:layout_toEndOf="@+id/EMinuten"
-        android:layout_toRightOf="@+id/EMinuten"
-        android:ems="10"
-        android:singleLine="false"
         android:text="@string/Pmstext5"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:layout_alignBottom="@+id/EMinuten"
+        android:layout_toRightOf="@+id/EMinuten"
+        android:layout_toEndOf="@+id/EMinuten" />
+
+
+
 
     <Button
         android:id="@+id/button_parameter"
@@ -221,5 +223,15 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:text="@string/button_ausfuehren" />
+
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/EGrad"
+        android:layout_marginTop="30dp"
+        android:text="MAP" />
 
 </RelativeLayout>

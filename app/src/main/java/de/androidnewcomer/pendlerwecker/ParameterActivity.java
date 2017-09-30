@@ -8,13 +8,45 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.location.places.ui.PlacePicker;
+
 public class ParameterActivity extends AppCompatActivity {
+
+    int PLACE_PICKER_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parameter);
+<<<<<<< HEAD
         final Button WelcomeButton = findViewById(R.id.button_parameter);
+=======
+        Button WelcomeButton = findViewById(R.id.button_parameter);
+
+        Button MapButton = findViewById(R.id.mapButton);
+
+        MapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
+
+                try {
+                    startActivityForResult(builder.build(ParameterActivity.this), PLACE_PICKER_REQUEST);
+                } catch (GooglePlayServicesRepairableException e) {
+                    e.printStackTrace();
+                } catch (GooglePlayServicesNotAvailableException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+>>>>>>> Design
         WelcomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
