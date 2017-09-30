@@ -8,7 +8,7 @@
     <Button
         android:id="@+id/stopAlarm"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:text="@string/WeckerStop"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -30,7 +30,7 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
         app:srcCompat="@drawable/stecknadel"
         android:layout_above="@+id/stopAlarm"
