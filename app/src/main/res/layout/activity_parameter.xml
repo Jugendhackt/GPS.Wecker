@@ -7,7 +7,7 @@
     tools:context="de.androidnewcomer.pendlerwecker.WelcomeActivity">
 
     <Button
-        android:id="@+id/Button"
+        android:id="@+id/WelcomeButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -36,12 +36,13 @@
         android:layout_height="wrap_content"
         android:text="@string/Pmstext2"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
         android:layout_below="@+id/editText7"
         android:layout_alignLeft="@+id/WelcomeButton"
         android:layout_alignStart="@+id/WelcomeButton" />
 
     <TextView
-        android:id="@+id/destination"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/destination"
@@ -60,7 +61,7 @@
         android:inputType="number"
         android:textSize="20dp"
         app:layout_constraintLeft_toRightOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/destination"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         android:layout_alignBaseline="@+id/textView6"
         android:layout_alignBottom="@+id/textView6"
         android:layout_toRightOf="@+id/textView6"
@@ -87,8 +88,9 @@
         android:textSize="20dp"
         app:layout_constraintLeft_toRightOf="@+id/textView4"
         tools:layout_editor_absoluteY="175dp"
-        android:layout_toRightOf="@+id/Button"
-        android:layout_toEndOf="@+id/Button" />
+        android:layout_alignTop="@+id/textView7"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_alignStart="@+id/editText3" />
 
     <TextView
         android:id="@+id/textView5"
@@ -122,7 +124,7 @@
         android:layout_alignBottom="@+id/editText8"
         android:layout_alignLeft="@+id/WelcomeButton"
         android:layout_alignStart="@+id/WelcomeButton"
-        android:layout_below="@+id/destination"
+        android:layout_below="@+id/textView3"
         android:text="@string/NGrad"
         android:textSize="30dp"
         tools:layout_editor_absoluteX="8dp"
@@ -149,7 +151,7 @@
         android:textSize="20dp"
         app:layout_constraintLeft_toRightOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
-        android:layout_below="@+id/destination"
+        android:layout_below="@+id/textView3"
         android:layout_toRightOf="@+id/textView4"
         android:layout_toEndOf="@+id/textView4" />
 
@@ -185,6 +187,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="20dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/editText6"
         android:layout_alignBaseline="@+id/editText10"
         android:layout_alignBottom="@+id/editText10"
@@ -197,7 +200,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        android:layout_below="@+id/textView" />
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView11"
+        android:layout_alignStart="@+id/textView11" />
 
     <EditText
         android:id="@+id/editText9"
