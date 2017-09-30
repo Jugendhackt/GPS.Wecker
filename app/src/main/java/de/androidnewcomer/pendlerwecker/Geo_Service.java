@@ -135,6 +135,7 @@ public class Geo_Service extends Service {
 
                     updatesEnable = false;
                     Intent intent= new Intent(getBaseContext(),AlarmActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
 
 
