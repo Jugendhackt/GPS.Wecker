@@ -234,4 +234,14 @@
         android:layout_marginTop="30dp"
         android:text="MAP" />
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="@string/Meter"
+        android:layout_alignBottom="@+id/Meter"
+        android:layout_toRightOf="@+id/Meter"
+        android:layout_marginBottom="8dp"
+        android:textSize="20dp"/>
+
 </RelativeLayout>
