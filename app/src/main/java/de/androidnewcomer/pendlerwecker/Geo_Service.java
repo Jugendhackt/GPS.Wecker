@@ -41,7 +41,7 @@ public class Geo_Service extends Service {
 
         final Double positionLatitude = intent.getDoubleExtra("lat", 50);
         final Double positionLongitude = intent.getDoubleExtra("lon", 20);
-        final int distance = intent.getIntExtra("distance", 50000);
+        final int distance = intent.getIntExtra("meter", 50000);
 
 
 
@@ -54,9 +54,9 @@ public class Geo_Service extends Service {
             // The id of the channel.
 
             // The user-visible name of the channel.
-            CharSequence name = "name";
+            CharSequence name = "Pendler Wecker";
             // The user-visible description of the channel.
-            String description = "description";
+            String description = "Alarm ist aktiviert";
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel mChannel = new NotificationChannel(id, name, importance);
             // Configure the notification channel.
@@ -74,9 +74,9 @@ public class Geo_Service extends Service {
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this, id)
                         //Paramenter werden
-                        .setContentTitle("My notification")
+                        .setContentTitle("Pendler Wecker")
                         .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentText("Hello World!");
+                        .setContentText("Alarm ist aktiviert");
 
 
         //Notification wird angezeigt
