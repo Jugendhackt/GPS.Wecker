@@ -88,6 +88,7 @@ public class Geo_Service extends Service {
             public void onLocationChanged(Location location) {
                 // Called when a new location is found by the network location provider.
                 Log.d("location", location.toString());
+                Log.d("location", "DA");
             }
 
             public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -100,23 +101,20 @@ public class Geo_Service extends Service {
             }
         };
 
-// Register the listener with the Location Manager to receive location updates
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return 3;
-        }
+
 
         // Assume thisActivity is the current activity
         int permissionCheck = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION);
 
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        if(permissionCheck == PackageManager.PERMISSION_GRANTED ){
+          //  Log.d("Log", "True");
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 4000, 0, locationListener);
+
+
+        }
+
+
 
 
 
@@ -126,6 +124,13 @@ public class Geo_Service extends Service {
     }
 
     private void gps(){
+
+
+    }
+    @Override
+    public void onDestroy(){
+
+        Log.d("onDestroy","Destroy");
 
 
     }

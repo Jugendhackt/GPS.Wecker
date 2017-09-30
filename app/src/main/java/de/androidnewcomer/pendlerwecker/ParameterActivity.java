@@ -17,7 +17,8 @@ public class ParameterActivity extends AppCompatActivity {
         WelcomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("Log", "hier1");
+
+
                 Intent intent = new Intent(getBaseContext(), Geo_Service.class);
                 startService(intent);
 
