@@ -6,17 +6,7 @@
     android:layout_height="match_parent"
     tools:context="de.androidnewcomer.pendlerwecker.WelcomeActivity">
 
-    <Button
-        android:id="@+id/WelcomeButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/button_ausfuehren"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+
 
     <TextView
         android:textSize ="20dp"
@@ -219,7 +209,7 @@
         android:textSize="20dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_parameter"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
