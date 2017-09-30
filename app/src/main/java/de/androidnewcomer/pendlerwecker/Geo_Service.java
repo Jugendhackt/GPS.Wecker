@@ -51,7 +51,7 @@ public class Geo_Service extends Service {
 
         final Double positionLatitude = intent.getDoubleExtra("lat", 50);
         final Double positionLongitude = intent.getDoubleExtra("lon", 20);
-        final int distance = intent.getIntExtra("meter", 50000);
+        final Double distance = intent.getDoubleExtra("meter", 50000);
 
 
 
