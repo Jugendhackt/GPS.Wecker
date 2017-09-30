@@ -35,7 +35,7 @@ public class ParameterActivity extends AppCompatActivity {
                     int EGrad = Integer.parseInt(EGradedit.getText().toString());
                     int EMinuten = Integer.parseInt(EMinutenedit.getText().toString());
                     int ESekunden = Integer.parseInt(ESekundenedit.getText().toString());
-                    int meter = Integer.parseInt(Meteredit.getText().toString());
+                    double meter = Double.parseDouble(Meteredit.getText().toString());
 
                     double lat = NMinuten / 60 + NSekunden / 3600 + NGrad;
                     double lon = EMinuten / 60 + ESekunden / 3600 + EGrad;
