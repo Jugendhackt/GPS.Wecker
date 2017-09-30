@@ -54,4 +54,18 @@ public class ParameterActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        Button Start = findViewById(R.id.button_parameter);
+        if(Geo_Service.isGeoActive == true) {
+            Start.setEnabled(false);
+
+        }
+        else Start.setEnabled(true);
+    }
+
+
+
 }

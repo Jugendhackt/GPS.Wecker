@@ -33,6 +33,9 @@ public class Geo_Service extends Service {
     String id = "my_channel_01";
     Boolean updatesEnable = true;
 
+    public static boolean isGeoActive = false;
+
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
@@ -44,6 +47,8 @@ public class Geo_Service extends Service {
             stopSelf();
             return START_NOT_STICKY;
         }
+        isGeoActive = true;
+
         final Double positionLatitude = intent.getDoubleExtra("lat", 50);
         final Double positionLongitude = intent.getDoubleExtra("lon", 20);
         final int distance = intent.getIntExtra("meter", 50000);
@@ -187,6 +192,7 @@ public class Geo_Service extends Service {
     public void onDestroy(){
 
         Log.d("onDestroy","Destroy");
+    isGeoActive = false;
 
 
     }
