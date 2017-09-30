@@ -29,12 +29,16 @@ import android.util.Log;
 
 public class Geo_Service extends Service {
 
-    private String id = "my_channel_01";
+
+    String id = "my_channel_01";
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         //Notification wird erstellt
+
+
+
 
         if(Build.VERSION.SDK_INT >= 26){
             // Für Android 8

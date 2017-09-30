@@ -81,6 +81,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
                 } else {
 
+
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                 }
@@ -90,6 +91,11 @@ public class WelcomeActivity extends AppCompatActivity {
             // other 'case' lines to check for other
             // permissions this app might request
         }
+    }
+
+
+    private void permission(){
+
     }
 
 
