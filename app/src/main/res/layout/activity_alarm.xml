@@ -17,11 +17,10 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="189dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="83dp"
         android:textSize="40dp"
         android:text="Du bist da!"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true" />
 </RelativeLayout>
