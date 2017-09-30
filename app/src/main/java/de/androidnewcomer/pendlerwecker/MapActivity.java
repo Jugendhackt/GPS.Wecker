@@ -1,11 +1,14 @@
 package de.androidnewcomer.pendlerwecker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -35,6 +38,7 @@ public class MapActivity extends AppCompatActivity{
 
 
     MapView map;
+    Double mapLongitude, mapLangitude;
 
 
     @Override
@@ -42,6 +46,7 @@ public class MapActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
 
 
+        setResult(RESULT_CANCELED);
 
 
         Context ctx = getApplicationContext();
@@ -77,7 +82,11 @@ public class MapActivity extends AppCompatActivity{
 
 
                 marker.setPosition(new GeoPoint(p.getLatitude(),p.getLongitude()));
-                marker.setTitle("Standort");
+
+                marker.setTitle("Zielort");
+
+                mapLangitude = p.getLatitude();
+                mapLongitude = p.getLongitude();
                 /*
                 marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                 //marker.setIcon(getResources().getDrawable(R.drawable.google_marker1));
@@ -116,4 +125,48 @@ public class MapActivity extends AppCompatActivity{
 
 
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.map_menu, menu);
+
+
+
+
+        return true;
+
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+
+        if(item.getItemId() == R.id.map_menu){
+
+
+            Intent intent = new Intent(getBaseContext(), ParameterActivity.class);
+            intent.putExtra("lang", mapLangitude);
+            intent.putExtra("long", mapLongitude);
+
+
+            setResult(RESULT_OK, intent);
+
+            finish();
+            //this.finish();
+
+
+
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
