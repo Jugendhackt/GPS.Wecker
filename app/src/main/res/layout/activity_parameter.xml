@@ -211,20 +211,19 @@
         android:layout_toEndOf="@+id/EMinuten" />
 
 
-
-
     <Button
         android:id="@+id/button_parameter"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:minHeight="80dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:text="@string/button_ausfuehren" />
+        android:background="#3ADF00"
+        android:minHeight="80dp"
+        android:text="@string/button_ausfuehren"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/mapButton"
