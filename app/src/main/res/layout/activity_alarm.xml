@@ -9,11 +9,12 @@
         android:id="@+id/stopAlarm"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="@string/WeckerStop"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="30dp"
+        android:background="#FA5858"
+        android:text="@string/WeckerStop" />
 
     <TextView
         android:id="@+id/textView3"
