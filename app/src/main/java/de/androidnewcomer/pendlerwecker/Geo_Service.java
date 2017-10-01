@@ -84,26 +84,8 @@ public class Geo_Service extends Service {
 
         }
 
-        Intent intent2 = new Intent(this, Geo_Service.class);
-
-        intent2.setAction("stop");
-
-
-
-        PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent2, 0);
-
-
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(this, id)
-                        //Paramenter werden
-                        .setContentTitle("Pendler Wecker")
-                        .setSmallIcon(R.mipmap.ic_launcher)
-                        .addAction(R.mipmap.ic_launcher, "Deaktivieren", pendingIntent)
-                        .setContentText("Alarm ist aktiviert");
-
-
         //Notification wird angezeigt
-        startForeground(100, mBuilder.build());
+        startForeground(100, notification(0.00).build());
 
 
 
@@ -134,9 +116,15 @@ public class Geo_Service extends Service {
 
 
 
-                float distanceInMeters = loc1.distanceTo(loc2);
+                double distanceInMeters = loc1.distanceTo(loc2);
 
                 Log.d("Meter: ", String.valueOf(distanceInMeters));
+
+
+                //Notification wird angezeigt
+                startForeground(100, notification(distanceInMeters).build());
+
+
 
                 if(distanceInMeters <= distance && updatesEnable){
 
@@ -207,6 +195,32 @@ public class Geo_Service extends Service {
     }
 
 
+    private NotificationCompat.Builder notification(Double entfernung){
+
+
+        Intent intent2 = new Intent(getBaseContext(), Geo_Service.class);
+
+        intent2.setAction("stop");
+
+
+
+        PendingIntent pendingIntent = PendingIntent.getService(getBaseContext(), 0, intent2, 0);
+
+
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(getBaseContext(), id)
+                        //Paramenter werden
+                        .setContentTitle("Alarm ist aktiviert")
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .addAction(R.mipmap.ic_launcher, "Deaktivieren", pendingIntent)
+                        .setContentText("Entfernung zum Ziel: " + String.valueOf(entfernung) + " Meter");
+
+
+
+
+        return mBuilder;
+
+    }
 
 
 }

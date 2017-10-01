@@ -30,6 +30,8 @@ public class ParameterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parameter);
 
+
+
         NGradedit = findViewById(R.id.NGrad);
         NMinutenedit = findViewById(R.id.NMinuten);
         NSekundenedit = findViewById(R.id.NSekunden);
@@ -43,6 +45,8 @@ public class ParameterActivity extends AppCompatActivity {
 
         final Button buttonParameter = findViewById(R.id.button_parameter);
 
+
+
         Button MapButton = findViewById(R.id.mapButton);
 
         MapButton.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +59,8 @@ public class ParameterActivity extends AppCompatActivity {
 
 
 
+
+
             }
         });
 
@@ -63,8 +69,8 @@ public class ParameterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(Geo_Service.isGeoActive == true){
                     Toast.makeText(getBaseContext(),R.string.button_ausfuehren_disabled, Toast.LENGTH_LONG).show();
-                    buttonParameter.setText("Gestartet");
                 }
+
 
                 else {
                 try {
@@ -79,7 +85,6 @@ public class ParameterActivity extends AppCompatActivity {
                     double meter = Double.parseDouble(Meteredit.getText().toString());
 
                     double latMinuten = (double) NMinuten / 60;
-                    Log.d("latitude min " , String.valueOf(latMinuten));
                     double latSekunden = NMinuten / 3600;
 
                     double lonMinuten = EMinuten / 60;
@@ -88,9 +93,12 @@ public class ParameterActivity extends AppCompatActivity {
 
                  //   double lat = (double) NMinuten / 60 + (double) NMinuten / 3600 + NGrad;
                  //   double lon = lonMinuten + lonSekunden + EGrad;
+                    Double EMinutenDouble = (double)EMinuten / 60.00;
+                    Double ESekundenDouble = (double)ESekunden / 3600;
+
 
                     double lat = (double)NMinuten / 60 + (double)NSekunden / 3600 + (double)NGrad;
-                    double lon = (double)EMinuten / 60 + (double)ESekunden / 3600 + (double)EGrad;
+                    double lon = EMinutenDouble + ESekundenDouble + (double)EGrad;
 
                     Log.d("latitude " , "wert:" + lat);
 
