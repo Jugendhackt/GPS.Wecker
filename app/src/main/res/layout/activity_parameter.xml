@@ -233,6 +233,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/EGrad"
         android:layout_marginTop="30dp"
+        android:background="#088A85"
         android:text="MAP" />
 
     <TextView
