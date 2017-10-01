@@ -30,6 +30,7 @@ import android.util.Log;
 public class Geo_Service extends Service {
 
 
+    private NotificationManager mNotificationManager;
     String id = "my_channel_01";
     Boolean updatesEnable = true;
 
@@ -58,12 +59,13 @@ public class Geo_Service extends Service {
         final Double distance = intent.getDoubleExtra("meter", 50000);
 
 
+        mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
 
         if(Build.VERSION.SDK_INT >= 26){
             // Für Android 8
-            NotificationManager mNotificationManager =
-                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
 
             // The id of the channel.
 
@@ -87,6 +89,7 @@ public class Geo_Service extends Service {
 
         //Notification wird angezeigt
         startForeground(100, notification(-1.00).build());
+
 
 
 
@@ -123,7 +126,13 @@ public class Geo_Service extends Service {
 
 
                 //Notification wird angezeigt
-                startForeground(100, notification(distanceInMeters).build());
+               // startForeground(100, notification(distanceInMeters).build());
+
+
+                mNotificationManager.notify(
+                        100,
+                        notification(distanceInMeters).build());
+
 
 
 
