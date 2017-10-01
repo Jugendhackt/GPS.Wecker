@@ -39,6 +39,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/WelcomeButton"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#58FA58"/>
 
 </RelativeLayout>
