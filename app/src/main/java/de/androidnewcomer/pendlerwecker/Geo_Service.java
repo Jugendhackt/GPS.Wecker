@@ -53,6 +53,7 @@ public class Geo_Service extends Service {
         final Double positionLongitude = intent.getDoubleExtra("lon", 20);
 
         Log.d("lat", String.valueOf(positionLatitude));
+
         Log.d("lon", String.valueOf(positionLongitude));
         final Double distance = intent.getDoubleExtra("meter", 50000);
 
@@ -85,7 +86,7 @@ public class Geo_Service extends Service {
         }
 
         //Notification wird angezeigt
-        startForeground(100, notification(0.00).build());
+        startForeground(100, notification(-1.00).build());
 
 
 
@@ -206,14 +207,28 @@ public class Geo_Service extends Service {
 
         PendingIntent pendingIntent = PendingIntent.getService(getBaseContext(), 0, intent2, 0);
 
+        NotificationCompat.Builder mBuilder;
 
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(getBaseContext(), id)
-                        //Paramenter werden
-                        .setContentTitle("Alarm ist aktiviert")
-                        .setSmallIcon(R.mipmap.ic_launcher)
-                        .addAction(R.mipmap.ic_launcher, "Deaktivieren", pendingIntent)
-                        .setContentText("Entfernung zum Ziel: " + String.valueOf(entfernung) + " Meter");
+        if(entfernung == -1.00) {
+            mBuilder =
+                    new NotificationCompat.Builder(getBaseContext(), id)
+                            //Paramenter werden
+                            .setContentTitle("Alarm ist aktiviert")
+                            .setSmallIcon(R.mipmap.ic_launcher)
+                            .addAction(R.mipmap.ic_launcher, "Deaktivieren", pendingIntent)
+                            .setContentText("Entfernung zum Ziel: ?");
+
+        }else {
+
+            mBuilder =
+                    new NotificationCompat.Builder(getBaseContext(), id)
+                            //Paramenter werden
+                            .setContentTitle("Alarm ist aktiviert")
+                            .setSmallIcon(R.mipmap.ic_launcher)
+                            .addAction(R.mipmap.ic_launcher, "Deaktivieren", pendingIntent)
+                            .setContentText("Entfernung zum Ziel: " + String.valueOf((Integer.valueOf(entfernung.intValue()) + " Meter")));
+
+        }
 
 
 

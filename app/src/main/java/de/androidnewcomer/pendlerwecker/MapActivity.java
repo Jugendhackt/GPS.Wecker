@@ -2,17 +2,11 @@ package de.androidnewcomer.pendlerwecker;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
@@ -20,15 +14,9 @@ import org.osmdroid.events.MapEventsReceiver;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.ItemizedIconOverlay;
-import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
 import org.osmdroid.views.overlay.MapEventsOverlay;
 import org.osmdroid.views.overlay.Marker;
-import org.osmdroid.views.overlay.OverlayItem;
-import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
-import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
-import java.util.ArrayList;
 
 /**
  * Created by jonas on 30.09.17.
@@ -38,7 +26,7 @@ public class MapActivity extends AppCompatActivity{
 
 
     MapView map;
-    Double mapLongitude, mapLangitude;
+    Double mapLongitude, mapLatitude;
 
 
     @Override
@@ -85,7 +73,7 @@ public class MapActivity extends AppCompatActivity{
 
                 marker.setTitle("Zielort");
 
-                mapLangitude = p.getLatitude();
+                mapLatitude = p.getLatitude();
                 mapLongitude = p.getLongitude();
                 /*
                 marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
@@ -151,7 +139,7 @@ public class MapActivity extends AppCompatActivity{
 
 
             Intent intent = new Intent(getBaseContext(), ParameterActivity.class);
-            intent.putExtra("lang", mapLangitude);
+            intent.putExtra("lang", mapLatitude);
             intent.putExtra("long", mapLongitude);
 
 
