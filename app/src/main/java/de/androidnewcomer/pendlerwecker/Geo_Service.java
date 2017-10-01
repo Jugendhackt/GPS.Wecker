@@ -214,7 +214,7 @@ public class Geo_Service extends Service {
                     new NotificationCompat.Builder(getBaseContext(), id)
                             //Paramenter werden
                             .setContentTitle("Alarm ist aktiviert")
-                            .setSmallIcon(R.mipmap.ic_launcher)
+                            .setSmallIcon(R.mipmap.ic_notification)
                             .addAction(R.mipmap.ic_launcher, "Deaktivieren", pendingIntent)
                             .setContentText("Entfernung zum Ziel: ?");
 
@@ -224,7 +224,7 @@ public class Geo_Service extends Service {
                     new NotificationCompat.Builder(getBaseContext(), id)
                             //Paramenter werden
                             .setContentTitle("Alarm ist aktiviert")
-                            .setSmallIcon(R.mipmap.ic_launcher)
+                            .setSmallIcon(R.mipmap.ic_notification)
                             .addAction(R.mipmap.ic_launcher, "Deaktivieren", pendingIntent)
                             .setContentText("Entfernung zum Ziel: " + String.valueOf((Integer.valueOf(entfernung.intValue()) + " Meter")));
 
