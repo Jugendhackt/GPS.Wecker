@@ -8,11 +8,11 @@
     <Button
         android:id="@+id/stopAlarm"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="8dp"
         android:background="#FA5858"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/WeckerStop" />
