@@ -9,10 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlacePicker;
+
 
 public class ParameterActivity extends AppCompatActivity {
 
@@ -41,7 +38,10 @@ public class ParameterActivity extends AppCompatActivity {
         ESekundenedit = findViewById(R.id.ESekunden);
         Meteredit = findViewById(R.id.Meter);
 
-        final Button WelcomeButton = findViewById(R.id.button_parameter);
+        Meteredit.setFocusableInTouchMode(true);
+        Meteredit.requestFocus();
+
+        final Button buttonParameter = findViewById(R.id.button_parameter);
 
         Button MapButton = findViewById(R.id.mapButton);
 
@@ -58,11 +58,12 @@ public class ParameterActivity extends AppCompatActivity {
             }
         });
 
-        WelcomeButton.setOnClickListener(new View.OnClickListener() {
+        buttonParameter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(Geo_Service.isGeoActive == true){
                     Toast.makeText(getBaseContext(),R.string.button_ausfuehren_disabled, Toast.LENGTH_LONG).show();
+                    buttonParameter.setText("Gestartet");
                 }
 
                 else {
@@ -77,8 +78,22 @@ public class ParameterActivity extends AppCompatActivity {
                     int ESekunden = Integer.parseInt(ESekundenedit.getText().toString());
                     double meter = Double.parseDouble(Meteredit.getText().toString());
 
-                    double lat = NMinuten / 60 + NSekunden / 3600 + NGrad;
-                    double lon = EMinuten / 60 + ESekunden / 3600 + EGrad;
+                    double latMinuten = (double) NMinuten / 60;
+                    Log.d("latitude min " , String.valueOf(latMinuten));
+                    double latSekunden = NMinuten / 3600;
+
+                    double lonMinuten = EMinuten / 60;
+                    double lonSekunden = EMinuten / 3600;
+
+
+                 //   double lat = (double) NMinuten / 60 + (double) NMinuten / 3600 + NGrad;
+                 //   double lon = lonMinuten + lonSekunden + EGrad;
+
+                    double lat = (double)NMinuten / 60 + (double)NSekunden / 3600 + (double)NGrad;
+                    double lon = (double)EMinuten / 60 + (double)ESekunden / 3600 + (double)EGrad;
+
+                    Log.d("latitude " , "wert:" + lat);
+
 
                     Intent intent = new Intent(getBaseContext(), Geo_Service.class);
                     intent.putExtra("lat", lat);
@@ -90,6 +105,8 @@ public class ParameterActivity extends AppCompatActivity {
                 } catch (NumberFormatException e) {
                     Toast.makeText(getBaseContext(), R.string.Fehlermeldung, Toast.LENGTH_LONG).show();}
                 }
+
+
             }
         });
     }
