@@ -40,6 +40,6 @@
         android:text="@string/WelcomeButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="#58FA58"/>
+        android:background="#3ADF00"/>
 
 </RelativeLayout>
