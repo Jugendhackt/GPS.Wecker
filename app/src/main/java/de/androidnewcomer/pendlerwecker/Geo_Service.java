@@ -31,6 +31,9 @@ public class Geo_Service extends Service {
 
 
     private NotificationManager mNotificationManager;
+    LocationManager locationManager;
+    LocationListener locationListener;
+    private NotificationCompat.Builder builder;
     String id = "my_channel_01";
     Boolean updatesEnable = true;
 
@@ -87,8 +90,32 @@ public class Geo_Service extends Service {
 
         }
 
+        Intent intent2 = new Intent(getBaseContext(), Geo_Service.class);
+
+        intent2.setAction("stop");
+
+
+
+        PendingIntent pendingIntent = PendingIntent.getService(getBaseContext(), 0, intent2, 0);
+
+        final NotificationCompat.Builder mBuilder;
+
+
+        mBuilder =
+                new NotificationCompat.Builder(getBaseContext(), id)
+                        //Paramenter werden
+                        .setContentTitle("Alarm ist aktiviert")
+                        .setSmallIcon(R.mipmap.ic_notification)
+                        .addAction(R.mipmap.ic_launcher, "Deaktivieren", pendingIntent)
+                        .setContentText("Entfernung zum Ziel: ?");
+
+
+
+
+
+
         //Notification wird angezeigt
-        startForeground(100, notification(-1.00).build());
+        startForeground(100, mBuilder.build());
 
 
 
@@ -97,10 +124,10 @@ public class Geo_Service extends Service {
 
 
         // Acquire a reference to the system Location Manager
-        LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
 // Define a listener that responds to location updates
-        LocationListener locationListener = new LocationListener() {
+        locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
                 // Called when a new location is found by the network location provider.
 
@@ -126,12 +153,38 @@ public class Geo_Service extends Service {
 
 
                 //Notification wird angezeigt
-               // startForeground(100, notification(distanceInMeters).build());
+
+                /*
+                mNotificationManager =
+                        (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+// Sets an ID for the notification, so it can be updated
+                int notifyID = 1;
+                 = new NotificationCompat.Builder(this)
+                        .setContentTitle("New Message")
+                        .setContentText("You've received new messages.")
+                        .setSmallIcon(R.drawable.ic_notify_status)
+                numMessages = 0;
+                */
 
 
+
+
+                mBuilder.setContentText("Entfernung zum Ziel: "  + (int)distanceInMeters + " Meter") ;
                 mNotificationManager.notify(
                         100,
                         notification(distanceInMeters).build());
+
+
+                //startForeground(100, notification(distanceInMeters).build());
+
+
+
+
+               /* mNotificationManager.notify(
+                        100,
+                        notification(distanceInMeters).build());
+
+*/
 
 
 
@@ -193,6 +246,7 @@ public class Geo_Service extends Service {
     public void onDestroy(){
 
         Log.d("onDestroy","Destroy");
+        locationManager.removeUpdates(locationListener);
     isGeoActive = false;
 
 
@@ -218,16 +272,6 @@ public class Geo_Service extends Service {
 
         NotificationCompat.Builder mBuilder;
 
-        if(entfernung == -1.00) {
-            mBuilder =
-                    new NotificationCompat.Builder(getBaseContext(), id)
-                            //Paramenter werden
-                            .setContentTitle("Alarm ist aktiviert")
-                            .setSmallIcon(R.mipmap.ic_notification)
-                            .addAction(R.mipmap.ic_launcher, "Deaktivieren", pendingIntent)
-                            .setContentText("Entfernung zum Ziel: ?");
-
-        }else {
 
             mBuilder =
                     new NotificationCompat.Builder(getBaseContext(), id)
@@ -235,9 +279,9 @@ public class Geo_Service extends Service {
                             .setContentTitle("Alarm ist aktiviert")
                             .setSmallIcon(R.mipmap.ic_notification)
                             .addAction(R.mipmap.ic_launcher, "Deaktivieren", pendingIntent)
-                            .setContentText("Entfernung zum Ziel: " + String.valueOf((Integer.valueOf(entfernung.intValue()) + " Meter")));
+                            .setContentText("Entfernung zum Ziel: " +(entfernung == -1.00 ? "?" : String.valueOf((Integer.valueOf(entfernung.intValue()) + " Meter"))) );
 
-        }
+
 
 
 
