@@ -34,6 +34,7 @@ public class MapActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
 
 
+
         setResult(RESULT_CANCELED);
 
 
@@ -41,6 +42,8 @@ public class MapActivity extends AppCompatActivity{
         //important! set your user agent to prevent getting banned from the osm servers
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
         setContentView(R.layout.map);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         map = (MapView) findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
@@ -128,7 +131,6 @@ public class MapActivity extends AppCompatActivity{
     }
 
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -152,7 +154,10 @@ public class MapActivity extends AppCompatActivity{
 
 
         }
+        else if(item.getItemId()== android.R.id.home) {
 
+        finish();
+        }
 
         return super.onOptionsItemSelected(item);
     }
