@@ -15,7 +15,7 @@
     <string name="NGrad">N</string>
     <string name="EGrad">E</string>
     <string name="Meter">m</string>
-    <string name="Dubistda">Du bist bald da!</string>
+    <string name="Dubistda">Du bist gleich da!</string>
     <string name="title_activity_alarm">Alarm</string>
     <string name="Fehlermeldung">Bitte gültige Zahlen eingeben</string>
 </resources>
