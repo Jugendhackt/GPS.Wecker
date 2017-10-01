@@ -18,4 +18,5 @@
     <string name="Dubistda">Du bist gleich da!</string>
     <string name="title_activity_alarm">Alarm</string>
     <string name="Fehlermeldung">Bitte gültige Zahlen eingeben</string>
+    <string name="map">MAP</string>
 </resources>

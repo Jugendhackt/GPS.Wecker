@@ -234,7 +234,7 @@
         android:layout_below="@+id/EGrad"
         android:layout_marginTop="30dp"
         android:background="#088A85"
-        android:text="MAP" />
+        android:text="@string/map" />
 
     <TextView
         android:id="@+id/textView8"
