@@ -28,9 +28,15 @@ public class AlarmActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
 
+
         final MediaPlayer ring= MediaPlayer.create(AlarmActivity.this,R.raw.biebbieb);
-        ring.setLooping(true);
-        ring.start();
+
+        try {
+            ring.setLooping(true);
+            ring.start();
+        } catch (Exception e){}
+
+
         vibratorthr.start();
 
 
@@ -38,8 +44,11 @@ public class AlarmActivity extends AppCompatActivity {
         stopAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ring.stop();
+
                 vibratorthr.interrupt();
+                try {
+                    ring.stop();
+                } catch (Exception e) {}
                 finish();
             }
         });
