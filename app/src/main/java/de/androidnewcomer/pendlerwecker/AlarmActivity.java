@@ -32,7 +32,7 @@ public class AlarmActivity extends AppCompatActivity {
         final MediaPlayer ring= MediaPlayer.create(AlarmActivity.this,R.raw.biebbieb);
 
         try {
-            ring.setLooping(true);
+            ring.setLooping(true);//ringing doesn't work on devices under android 7
             ring.start();
         } catch (Exception e){}
 
